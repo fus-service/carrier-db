@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Carrier Database</title>
+    <title>SES Carrier Database</title>
 
     <style>
 
@@ -37,7 +37,7 @@
 
         .hero-text h1{
             margin:0;
-            font-size:40px;
+            font-size:42px;
         }
 
         .hero-text p{
@@ -50,7 +50,7 @@
 
         .card{
             background:white;
-            max-width:900px;
+            max-width:1000px;
             padding:25px;
             border-radius:12px;
             box-shadow:0 4px 15px rgba(0,0,0,0.15);
@@ -59,11 +59,13 @@
 
         h2{
             color:#004080;
+            border-bottom:2px solid #0078d4;
+            padding-bottom:5px;
         }
 
         .stats{
             display:flex;
-            gap:12px;
+            gap:10px;
             margin-bottom:25px;
             flex-wrap:wrap;
         }
@@ -73,7 +75,7 @@
             color:white;
             padding:15px;
             border-radius:8px;
-            min-width:140px;
+            min-width:160px;
             text-align:center;
             font-weight:bold;
         }
@@ -103,11 +105,15 @@
             padding:12px 20px;
             border-radius:6px;
             cursor:pointer;
-            font-size:16px;
+            margin-right:10px;
         }
 
         button:hover{
             background:#005a9e;
+        }
+
+        .section{
+            margin-top:25px;
         }
 
     </style>
@@ -116,101 +122,138 @@
 
 <body>
 
-    <div class="hero">
-        <div class="hero-text">
-            <h1>📡 SES Carrier Database</h1>
-            <p>RF Operations • Carrier Planning • SQM Replacement</p>
-        </div>
+<div class="hero">
+    <div class="hero-text">
+        <h1>📡 SES Carrier Database</h1>
+        <p>RF Operations • Carrier Planning • SQM Replacement</p>
     </div>
+</div>
 
-    <div class="container">
+<div class="container">
 
-        <div class="card">
+<div class="card">
 
-            <h2>Carrier Details</h2>
+<div class="stats">
 
-            <div class="stats">
+<div class="stat-box">
+📡<br>
+Antenna Paths
+</div>
 
-                <div class="stat-box">
-                    📡<br>
-                    32 Antennas
-                </div>
+<div class="stat-box">
+🛰<br>
+BC Frequencies
+</div>
 
-                <div class="stat-box">
-                    🛰<br>
-                    17 Satellites
-                </div>
+<div class="stat-box">
+📶<br>
+Modems
+</div>
 
-                <div class="stat-box">
-                    📶<br>
-                    17,424 Carriers
-                </div>
+<div class="stat-box">
+🏢<br>
+Equipment Rooms
+</div>
 
-                <div class="stat-box">
-                    👥<br>
-                    250 Customers
-                </div>
+</div>
 
-            </div>
+<div class="section">
 
-            <label>Antenna</label><br>
-            <select id="antenna">
-                <option>Select Antenna</option>
-                <option>FUS-C12</option>
-                <option>FUS-K24</option>
-            </select>
+<h2>RF Infrastructure Details</h2>
 
-            <br><br>
+<label>Teleport</label><br>
+<select id="teleport">
+<option>FUS</option>
+</select>
 
-            <label>Carrier ID</label><br>
-            <select id="carrierid">
-                <option>Select Carrier</option>
-                <option>TEST001</option>
-                <option>TEST002</option>
-            </select>
+<br><br>
 
-            <br><br>
+<label>Building</label><br>
+<select id="building">
+<option>CB</option>
+</select>
 
-            <label>Customer</label><br>
-            <input type="text" id="customer">
+<br><br>
 
-            <br><br>
+<label>Room</label><br>
+<input type="text" id="room" placeholder="Room Number">
 
-            <label>Satellite</label><br>
-            <input type="text" id="satellite">
+<br><br>
 
-            <br><br>
+<label>Antenna Path</label><br>
+<input type="text" id="antennapath" placeholder="FUS.C12.L.DL.1">
 
-            <label>TxRx</label><br>
-            <input type="text" id="txrx">
+<br><br>
 
-            <br><br>
+<label>Online Modem</label><br>
+<input type="text" id="onlinemodem" placeholder="01/CB/24/02/13/45">
 
-            <label>Modem</label><br>
-            <input type="text" id="modem">
+<br><br>
 
-            <br><br>
+<label>BC Frequency (MHz)</label><br>
+<input type="text" id="bcfreq" placeholder="5150">
 
-            <label>Planned CF</label><br>
-            <input type="text" id="plannedcf">
+<br><br>
 
-            <br><br>
+<label>Line Amplifier</label><br>
+<input type="text" id="lineamp" placeholder="fus-cb24-ampc227">
 
-            <label>Carrier Rate</label><br>
-            <input type="text" id="rate">
+</div>
 
-            <br><br>
+<div class="section">
 
-            <label>Remarks</label><br>
-            <textarea id="remarks" rows="4"></textarea>
+<h2>Carrier Information</h2>
 
-            <br><br>
+<label>Carrier ID</label><br>
+<input type="text" id="carrierid">
 
-            <button>💾 Save Carrier</button>
+<br><br>
 
-        </div>
+<label>Customer</label><br>
+<input type="text" id="customer">
 
-    </div>
+<br><br>
+
+<label>Satellite</label><br>
+<input type="text" id="satellite">
+
+<br><br>
+
+<label>Planned CF</label><br>
+<input type="text" id="plannedcf">
+
+<br><br>
+
+<label>Carrier Data Rate</label><br>
+<input type="text" id="rate">
+
+<br><br>
+
+<label>Status</label><br>
+<select id="status">
+<option>Active</option>
+<option>Planned</option>
+<option>Maintenance</option>
+<option>Testing</option>
+<option>Decommissioned</option>
+</select>
+
+<br><br>
+
+<label>Remarks</label><br>
+<textarea id="remarks" rows="5"></textarea>
+
+<br><br>
+
+<button>💾 Save Carrier</button>
+<button>📥 Export Excel</button>
+<button>🔍 Search</button>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 
