@@ -2,135 +2,134 @@
 <html>
 
 <head>
-    <title>SES Carrier Database</title>
+<title>SES Carrier Database</title>
 
-    <style>
+<style>
 
-        body{
-            margin:0;
-            font-family:Segoe UI, Arial, sans-serif;
-            background:#f4f6f9;
-        }
+body{
+    margin:0;
+    font-family:Segoe UI, Arial, sans-serif;
+    background:#f4f6f9;
+}
 
-        .hero{
-            background-image:
-            linear-gradient(
-                rgba(0,0,0,0.45),
-                rgba(0,0,0,0.45)
-            ),
-            url('antenna.jpg');
+.hero{
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ),
+    url('antenna.jpg');
 
-            background-size:cover;
-            background-position:center;
-            height:320px;
+    background-size:cover;
+    background-position:center;
+    height:320px;
 
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-        .hero-text{
-            color:white;
-            text-align:center;
-            padding:20px 40px;
-        }
+.hero-text{
+    color:white;
+    text-align:center;
+    padding:20px 40px;
+}
 
-        .hero-text h1{
-            margin:0;
-            font-size:42px;
-        }
+.hero-text h1{
+    margin:0;
+    font-size:42px;
+}
 
-        .hero-text p{
-            font-size:18px;
-        }
+.hero-text p{
+    font-size:18px;
+}
 
-        .container{
-            padding:30px;
-        }
+.container{
+    padding:30px;
+}
 
-        .card{
-            background:white;
-            max-width:1000px;
-            padding:25px;
-            border-radius:12px;
-            box-shadow:0 4px 15px rgba(0,0,0,0.15);
-            margin:auto;
-        }
+.card{
+    background:white;
+    max-width:1000px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    margin:auto;
+}
 
-        h2{
-            color:#004080;
-            border-bottom:2px solid #0078d4;
-            padding-bottom:5px;
-        }
+h2{
+    color:#004080;
+    border-bottom:2px solid #0078d4;
+    padding-bottom:5px;
+}
 
-        .stats{
-            display:flex;
-            gap:10px;
-            margin-bottom:25px;
-            flex-wrap:wrap;
-        }
+.stats{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
 
-        .stat-box{
-            background:#0078d4;
-            color:white;
-            padding:15px;
-            border-radius:8px;
-            min-width:160px;
-            text-align:center;
-            font-weight:bold;
-        }
+.stat-box{
+    background:#0078d4;
+    color:white;
+    padding:15px;
+    border-radius:8px;
+    min-width:160px;
+    text-align:center;
+    font-weight:bold;
+}
 
-        label{
-            font-weight:bold;
-        }
+label{
+    font-weight:bold;
+}
 
-        input,
-        select,
-        textarea{
-            width:100%;
-            padding:10px;
-            border:1px solid #ccc;
-            border-radius:6px;
-            box-sizing:border-box;
-        }
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    box-sizing:border-box;
+}
 
-        textarea{
-            resize:vertical;
-        }
+textarea{
+    resize:vertical;
+}
 
-        button{
-            background:#0078d4;
-            color:white;
-            border:none;
-            padding:12px 20px;
-            border-radius:6px;
-            cursor:pointer;
-            margin-right:10px;
-        }
+button{
+    background:#0078d4;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-right:10px;
+}
 
-        button:hover{
-            background:#005a9e;
-        }
+button:hover{
+    background:#005a9e;
+}
 
-        .section{
-            margin-top:25px;
-        }
+.section{
+    margin-top:25px;
+}
 
-    </style>
+</style>
 
 </head>
 
 <body>
 
 <div class="hero">
-    <div class="hero-text">
-        <h1>📡 SES Carrier Database</h1>
-        <p>RF Operations • Carrier Planning • SQM Replacement</p>
-    </div>
+<div class="hero-text">
+<h1>📡 SES Carrier Database</h1>
+<p>RF Operations • Carrier Planning • SQM Replacement</p>
+</div>
 </div>
 
 <div class="container">
-
 <div class="card">
 
 <div class="stats">
@@ -142,7 +141,7 @@ Antenna Paths
 
 <div class="stat-box">
 🛰<br>
-BC Frequencies
+Satellites
 </div>
 
 <div class="stat-box">
@@ -175,42 +174,35 @@ Equipment Rooms
 
 <br><br>
 
+<label>Antenna</label><br>
+<select id="antenna">
+<option>Loading...</option>
+</select>
+
+<br><br>
+
 <label>Room</label><br>
-<input type="text" id="room" placeholder="Room Number">
+<input type="text" id="room">
 
 <br><br>
 
 <label>Antenna Path</label><br>
-<input type="text" id="antennapath" placeholder="FUS.C12.L.DL.1">
+<input type="text" id="antennapath">
 
 <br><br>
 
 <label>Online Modem</label><br>
-<select id="onlinemodem">
-    <option>Select Modem</option>
-    <option>01/CB/24/02/13/45</option>
-    <option>01/CB/04/02/15</option>
-    <option>fus-cb4-mdm730</option>
-</select>
+<input type="text" id="onlinemodem">
 
 <br><br>
 
-<label>BC Frequency (MHz)</label><br>
-<select id="bcfreq">
-    <option>4900</option>
-    <option>5150</option>
-    <option>10000</option>
-    <option>10500</option>
-    <option>10750</option>
-    <option>12800</option>
-    <option>17350</option>
-    <option>27400</option>
-</select>
+<label>BC Frequency</label><br>
+<input type="text" id="bcfreq">
 
 <br><br>
 
 <label>Line Amplifier</label><br>
-<input type="text" id="lineamp" placeholder="fus-cb24-ampc227">
+<input type="text" id="lineamp">
 
 </div>
 
@@ -225,22 +217,14 @@ Equipment Rooms
 
 <label>Customer</label><br>
 <select id="customer">
-    <option>Select Customer</option>
-    <option>Telefonica</option>
-    <option>Speedcast</option>
-    <option>Intelsat</option>
-    <option>United Nations</option>
+<option>Loading...</option>
 </select>
 
 <br><br>
 
 <label>Satellite</label><br>
 <select id="satellite">
-    <option>Select Satellite</option>
-    <option>SES-17</option>
-    <option>Intelsat 37e</option>
-    <option>SES-14</option>
-    <option>Astra 1P</option>
+<option>Loading...</option>
 </select>
 
 <br><br>
@@ -257,11 +241,7 @@ Equipment Rooms
 
 <label>Status</label><br>
 <select id="status">
-<option>Active</option>
-<option>Planned</option>
-<option>Maintenance</option>
-<option>Testing</option>
-<option>Decommissioned</option>
+<option>Loading...</option>
 </select>
 
 <br><br>
@@ -278,9 +258,46 @@ Equipment Rooms
 </div>
 
 </div>
-
 </div>
 
-</body>
+<script>
 
+async function loadDropdown(csvFile, elementId){
+
+    const response = await fetch(csvFile);
+    const text = await response.text();
+
+    const rows = text.trim().split('\n');
+
+    const select =
+        document.getElementById(elementId);
+
+    select.innerHTML = '';
+
+    rows.slice(1).forEach(row => {
+
+        if(row.trim()){
+
+            const option =
+                document.createElement('option');
+
+            option.value = row.trim();
+            option.textContent = row.trim();
+
+            select.appendChild(option);
+
+        }
+
+    });
+
+}
+
+loadDropdown("customers.csv","customer");
+loadDropdown("satellites.csv","satellite");
+loadDropdown("status.csv","status");
+loadDropdown("antennas.csv","antenna");
+
+</script>
+
+</body>
 </html>
