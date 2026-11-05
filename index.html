@@ -1,8 +1,160 @@
-<h1>Carrier Database</h1>
+<!DOCTYPE html>
+<html>
 
-<p>SQM Replacement Prototype</p>
+<head>
+<title>Carrier Database</title>
 
-<hr>
+<style>
+
+body{
+    margin:0;
+    font-family:Segoe UI, Arial, sans-serif;
+    background:#f4f6f9;
+}
+
+.hero{
+    background-image:url('antenna.jpg');
+    background-size:cover;
+    background-position:center;
+    height:320px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-text{
+    background:rgba(0,51,102,0.75);
+    color:white;
+    padding:25px 50px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.container{
+    padding:30px;
+}
+
+.card{
+    background:white;
+    max-width:700px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    margin:auto;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    box-sizing:border-box;
+}
+
+button{
+    background:#0078d4;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#005a9e;
+}
+
+h2{
+    color:#004080;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>📡 Carrier Database</h1>
+        <p>SQM Replacement Tool for RF Operations</p>
+    </div>
+</div>
+
+<div class="container">
+<div class="card">
+
+<h2>Carrier Details</h2>
+
+<label>Antenna:</label><br>
+<select id="antenna">
+    <option>Select Antenna</option>
+    <option>FUS-C12</option>
+    <option>FUS-K24</option>
+</select>
+
+<br><br>
+
+<label>Carrier ID:</label><br>
+<select id="carrierid">
+    <option>Select Carrier</option>
+    <option>TEST001</option>
+    <option>TEST002</option>
+</select>
+
+<br><br>
+
+<label>Customer:</label><br>
+<input type="text" id="customer">
+
+<br><br>
+
+<label>Satellite:</label><br>
+<input type="text" id="satellite">
+
+<br><br>
+
+<label>TxRx:</label><br>
+<input type="text" id="txrx">
+
+<br><br>
+
+<label>Modem:</label><br>
+<input type="text" id="modem">
+
+<br><br>
+
+<label>Planned CF:</label><br>
+<input type="text" id="plannedcf">
+
+<br><br>
+
+<label>Carrier Rate:</label><br>
+<input type="text" id="rate">
+
+<br><br>
+
+<label>Remarks:</label><br>
+<textarea id="remarks" rows="4"></textarea>
+
+<br><br>
+
+<button>💾 Save Carrier</button>
+
+</div>
+</div>
+
+</body>
+</html>    <div class="hero-text">
+        <h1>📡 Carrier Database</h1>
+        <p>SQM Replacement Tool for RF Operations</p>
+    </div>
+</div>
+
+<div class="container">
+<div class="card">
 
 <h2>Carrier Details</h2>
 
@@ -59,6 +211,10 @@
 
 <br><br>
 
-<button>Save</button>
+<button>💾 Save Carrier</button>
 
-<hr>
+</div>
+</div>
+
+</body>
+</html>
