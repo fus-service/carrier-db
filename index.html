@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+
 <title>SES Carrier Database</title>
 
 <style>
@@ -118,7 +118,6 @@ button:hover{
 }
 
 </style>
-
 </head>
 
 <body>
@@ -137,23 +136,19 @@ button:hover{
 <div class="stats">
 
 <div class="stat-box">
-📡<br>
-Antenna Paths
+📡<br>Antenna Paths
 </div>
 
 <div class="stat-box">
-🛰<br>
-Satellites
+🛰<br>Satellites
 </div>
 
 <div class="stat-box">
-📶<br>
-Modems
+📶<br>Modems
 </div>
 
 <div class="stat-box">
-🏢<br>
-Equipment Rooms
+🏢<br>Equipment Rooms
 </div>
 
 </div>
@@ -298,15 +293,10 @@ Equipment Rooms
 <br><br>
 
 <button>💾 Save Carrier</button>
-
 <button>📥 Full Export</button>
-
 <button>👥 Export Customer</button>
-
 <button>🛰 Export Satellite</button>
-
 <button>📡 Export Antenna</button>
-
 <button>🔍 Search</button>
 
 </div>
@@ -342,15 +332,80 @@ async function loadDropdown(csvFile, elementId){
             option.textContent = row.trim();
 
             select.appendChild(option);
+
         }
 
     });
+
 }
 
 loadDropdown("customers.csv","customer");
 loadDropdown("satellites.csv","satellite");
 loadDropdown("status.csv","status");
 loadDropdown("antennas.csv","antenna");
+
+let infrastructureData = [];
+
+fetch("infrastructure.csv")
+.then(response => response.text())
+.then(text => {
+
+    const rows =
+        text.trim().split('\n');
+
+    infrastructureData =
+        rows.slice(1).map(row => {
+
+            const cols = row.split(',');
+
+            return {
+
+                AntennaPath: cols[0],
+                OnlineModem: cols[1],
+                BCFreq: cols[2],
+                Teleport: cols[3],
+                Building: cols[4],
+                Room: cols[5],
+                Lineamp: cols[6]
+
+            };
+
+        });
+
+});
+
+document
+.getElementById("antenna")
+.addEventListener("change", function(){
+
+    const antenna =
+        this.value.replace("FUS-","");
+
+    const match =
+        infrastructureData.find(
+            x => x.AntennaPath.includes(antenna)
+        );
+
+    if(match){
+
+        document.getElementById("antennapath").value =
+            match.AntennaPath;
+
+        document.getElementById("onlinemodem").value =
+            match.OnlineModem;
+
+        document.getElementById("bcfreq").value =
+            match.BCFreq;
+
+        document.getElementById("room").value =
+            match.Room;
+
+        document.getElementById("lineamp").value =
+            match.Lineamp;
+
+    }
+
+});
 
 </script>
 
