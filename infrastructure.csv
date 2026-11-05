@@ -1,0 +1,4 @@
+AntennaPath,OnlineModem,BCFreq,Teleport,Building,Room,Lineamp
+FUS.C12.L.DL.1,01/CB/24/02/13/45,5150,FUS,CB,24,fus-cb24-ampc227
+FUS.C12.R.UL.2,01/CB/24/02/13/45,4900,FUS,CB,24,fus-cb24-ampc228
+FUS.K24.V.DL.1,01/CB/4/02/14,10000,FUS,CB,4,fus-cb4-ampc231
