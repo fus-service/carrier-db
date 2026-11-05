@@ -323,8 +323,8 @@ button:hover{
 <button>👥 Export Customer</button>
 <button>🛰 Export Satellite</button>
 <button>📡 Export Antenna</button>
-<button>🔍 Search</button>
-
+<button onclick="showSavedCount()">📊 Saved Records</button>
+    
 </div>
 
 </div>
@@ -432,7 +432,19 @@ document
     }
 
 });
+function showSavedCount(){
 
+    let carriers =
+        JSON.parse(
+            localStorage.getItem("carriers")
+        ) || [];
+
+    alert(
+        "Total saved records: "
+        + carriers.length
+    );
+
+}
 </script>
 
 </body>
