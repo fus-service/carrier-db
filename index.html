@@ -2,50 +2,88 @@
 <html>
 <head>
 <title>Carrier Database</title>
+
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+body{
+    font-family:Arial;
+    margin:20px;
 }
-table {
-    border-collapse: collapse;
-    width: 100%;
+
+h1{
+    color:#0066cc;
 }
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
+
+input{
+    padding:8px;
+    width:300px;
+    margin-bottom:15px;
 }
-h1 {
-    color: #0066cc;
+
+table{
+    border-collapse:collapse;
+    width:100%;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:8px;
 }
 </style>
+
 </head>
+
 <body>
 
 <h1>Carrier Database</h1>
 
 <p>SQM Replacement Prototype</p>
 
-<table>
-    <tr>
-        <th>Antenna</th>
-        <th>Satellite</th>
-        <th>TxRx</th>
-        <th>Customer</th>
-    </tr>
-    <tr>
-        <td>FUS-C12</td>
-        <td>SES-17</td>
-        <td>RX</td>
-        <td>Test Customer</td>
-    </tr>
-    <tr>
-        <td>FUS-K24</td>
-        <td>IS-37E</td>
-        <td>TX</td>
-        <td>Demo Customer</td>
-    </tr>
+<input type="text" id="search" placeholder="Search customer...">
+
+<table id="carrierTable">
+<thead>
+<tr>
+<th>Antenna</th>
+<th>Satellite</th>
+<th>TxRx</th>
+<th>Customer</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
 </table>
+
+<script>
+
+fetch("carrier.csv")
+.then(response => response.text())
+.then(data => {
+
+const rows = data.trim().split("\n");
+
+const tbody =
+document.querySelector("#carrierTable tbody");
+
+rows.slice(1).forEach(row => {
+
+const cols = row.split(",");
+
+const tr = document.createElement("tr");
+
+tr.innerHTML = `
+<td>${cols[0]}</td>
+<td>${cols[1]}</td>
+<td>${cols[2]}</td>
+<td>${cols[3]}</td>
+`;
+
+tbody.appendChild(tr);
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
