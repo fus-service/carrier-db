@@ -2,219 +2,216 @@
 <html>
 
 <head>
-<title>Carrier Database</title>
+    <title>Carrier Database</title>
 
-<style>
+    <style>
 
-body{
-    margin:0;
-    font-family:Segoe UI, Arial, sans-serif;
-    background:#f4f6f9;
-}
+        body{
+            margin:0;
+            font-family:Segoe UI, Arial, sans-serif;
+            background:#f4f6f9;
+        }
 
-.hero{
-    background-image:url('antenna.jpg');
-    background-size:cover;
-    background-position:center;
-    height:320px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        .hero{
+            background-image:
+            linear-gradient(
+                rgba(0,0,0,0.45),
+                rgba(0,0,0,0.45)
+            ),
+            url('antenna.jpg');
 
-.hero-text{
-    background:rgba(0,51,102,0.75);
-    color:white;
-    padding:25px 50px;
-    border-radius:12px;
-    text-align:center;
-}
+            background-size:cover;
+            background-position:center;
+            height:320px;
 
-.container{
-    padding:30px;
-}
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
 
-.card{
-    background:white;
-    max-width:700px;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.15);
-    margin:auto;
-}
+        .hero-text{
+            color:white;
+            text-align:center;
+            padding:20px 40px;
+        }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    box-sizing:border-box;
-}
+        .hero-text h1{
+            margin:0;
+            font-size:40px;
+        }
 
-button{
-    background:#0078d4;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:6px;
-    cursor:pointer;
-}
+        .hero-text p{
+            font-size:18px;
+        }
 
-button:hover{
-    background:#005a9e;
-}
+        .container{
+            padding:30px;
+        }
 
-h2{
-    color:#004080;
-}
+        .card{
+            background:white;
+            max-width:900px;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.15);
+            margin:auto;
+        }
 
-</style>
+        h2{
+            color:#004080;
+        }
+
+        .stats{
+            display:flex;
+            gap:12px;
+            margin-bottom:25px;
+            flex-wrap:wrap;
+        }
+
+        .stat-box{
+            background:#0078d4;
+            color:white;
+            padding:15px;
+            border-radius:8px;
+            min-width:140px;
+            text-align:center;
+            font-weight:bold;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input,
+        select,
+        textarea{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:6px;
+            box-sizing:border-box;
+        }
+
+        textarea{
+            resize:vertical;
+        }
+
+        button{
+            background:#0078d4;
+            color:white;
+            border:none;
+            padding:12px 20px;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#005a9e;
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-<div class="hero">
-    <div class="hero-text">
-        <h1>📡 Carrier Database</h1>
-        <p>SQM Replacement Tool for RF Operations</p>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>📡 SES Carrier Database</h1>
+            <p>RF Operations • Carrier Planning • SQM Replacement</p>
+        </div>
     </div>
-</div>
 
-<div class="container">
-<div class="card">
+    <div class="container">
 
-<h2>Carrier Details</h2>
+        <div class="card">
 
-<label>Antenna:</label><br>
-<select id="antenna">
-    <option>Select Antenna</option>
-    <option>FUS-C12</option>
-    <option>FUS-K24</option>
-</select>
+            <h2>Carrier Details</h2>
 
-<br><br>
+            <div class="stats">
 
-<label>Carrier ID:</label><br>
-<select id="carrierid">
-    <option>Select Carrier</option>
-    <option>TEST001</option>
-    <option>TEST002</option>
-</select>
+                <div class="stat-box">
+                    📡<br>
+                    32 Antennas
+                </div>
 
-<br><br>
+                <div class="stat-box">
+                    🛰<br>
+                    17 Satellites
+                </div>
 
-<label>Customer:</label><br>
-<input type="text" id="customer">
+                <div class="stat-box">
+                    📶<br>
+                    17,424 Carriers
+                </div>
 
-<br><br>
+                <div class="stat-box">
+                    👥<br>
+                    250 Customers
+                </div>
 
-<label>Satellite:</label><br>
-<input type="text" id="satellite">
+            </div>
 
-<br><br>
+            <label>Antenna</label><br>
+            <select id="antenna">
+                <option>Select Antenna</option>
+                <option>FUS-C12</option>
+                <option>FUS-K24</option>
+            </select>
 
-<label>TxRx:</label><br>
-<input type="text" id="txrx">
+            <br><br>
 
-<br><br>
+            <label>Carrier ID</label><br>
+            <select id="carrierid">
+                <option>Select Carrier</option>
+                <option>TEST001</option>
+                <option>TEST002</option>
+            </select>
 
-<label>Modem:</label><br>
-<input type="text" id="modem">
+            <br><br>
 
-<br><br>
+            <label>Customer</label><br>
+            <input type="text" id="customer">
 
-<label>Planned CF:</label><br>
-<input type="text" id="plannedcf">
+            <br><br>
 
-<br><br>
+            <label>Satellite</label><br>
+            <input type="text" id="satellite">
 
-<label>Carrier Rate:</label><br>
-<input type="text" id="rate">
+            <br><br>
 
-<br><br>
+            <label>TxRx</label><br>
+            <input type="text" id="txrx">
 
-<label>Remarks:</label><br>
-<textarea id="remarks" rows="4"></textarea>
+            <br><br>
 
-<br><br>
+            <label>Modem</label><br>
+            <input type="text" id="modem">
 
-<button>💾 Save Carrier</button>
+            <br><br>
 
-</div>
-</div>
+            <label>Planned CF</label><br>
+            <input type="text" id="plannedcf">
+
+            <br><br>
+
+            <label>Carrier Rate</label><br>
+            <input type="text" id="rate">
+
+            <br><br>
+
+            <label>Remarks</label><br>
+            <textarea id="remarks" rows="4"></textarea>
+
+            <br><br>
+
+            <button>💾 Save Carrier</button>
+
+        </div>
+
+    </div>
 
 </body>
-</html>    <div class="hero-text">
-        <h1>📡 Carrier Database</h1>
-        <p>SQM Replacement Tool for RF Operations</p>
-    </div>
-</div>
 
-<div class="container">
-<div class="card">
-
-<h2>Carrier Details</h2>
-
-<label>Antenna:</label><br>
-<select id="antenna">
-    <option>Select Antenna</option>
-    <option>FUS-C12</option>
-    <option>FUS-K24</option>
-</select>
-
-<br><br>
-
-<label>Carrier ID:</label><br>
-<select id="carrierid">
-    <option>Select Carrier</option>
-    <option>TEST001</option>
-    <option>TEST002</option>
-</select>
-
-<br><br>
-
-<label>Customer:</label><br>
-<input type="text" id="customer">
-
-<br><br>
-
-<label>Satellite:</label><br>
-<input type="text" id="satellite">
-
-<br><br>
-
-<label>TxRx:</label><br>
-<input type="text" id="txrx">
-
-<br><br>
-
-<label>Modem:</label><br>
-<input type="text" id="modem">
-
-<br><br>
-
-<label>Planned CF:</label><br>
-<input type="text" id="plannedcf">
-
-<br><br>
-
-<label>Carrier Rate:</label><br>
-<input type="text" id="rate">
-
-<br><br>
-
-<label>Remarks:</label><br>
-<textarea id="remarks" rows="4" cols="50"></textarea>
-
-<br><br>
-
-<button>💾 Save Carrier</button>
-
-</div>
-</div>
-
-</body>
 </html>
