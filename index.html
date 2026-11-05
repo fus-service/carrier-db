@@ -1,89 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Carrier Database</title>
-
-<style>
-body{
-    font-family:Arial;
-    margin:20px;
-}
-
-h1{
-    color:#0066cc;
-}
-
-input{
-    padding:8px;
-    width:300px;
-    margin-bottom:15px;
-}
-
-table{
-    border-collapse:collapse;
-    width:100%;
-}
-
-th,td{
-    border:1px solid #ccc;
-    padding:8px;
-}
-</style>
-
-</head>
-
-<body>
-
 <h1>Carrier Database</h1>
 
 <p>SQM Replacement Prototype</p>
 
-<input type="text" id="search" placeholder="Search customer...">
+<hr>
 
-<table id="carrierTable">
-<thead>
-<tr>
-<th>Antenna</th>
-<th>Satellite</th>
-<th>TxRx</th>
-<th>Customer</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<h2>Carrier Details</h2>
 
-<script>
+<label>Antenna:</label><br>
+<select id="antenna">
+    <option>Select Antenna</option>
+    <option>FUS-C12</option>
+    <option>FUS-K24</option>
+</select>
 
-fetch("carrier.csv")
-.then(response => response.text())
-.then(data => {
+<br><br>
 
-const rows = data.trim().split("\n");
+<label>Carrier ID:</label><br>
+<select id="carrierid">
+    <option>Select Carrier</option>
+    <option>TEST001</option>
+    <option>TEST002</option>
+</select>
 
-const tbody =
-document.querySelector("#carrierTable tbody");
+<br><br>
 
-rows.slice(1).forEach(row => {
+<label>Customer:</label><br>
+<input type="text" id="customer">
 
-const cols = row.split(",");
+<br><br>
 
-const tr = document.createElement("tr");
+<label>Satellite:</label><br>
+<input type="text" id="satellite">
 
-tr.innerHTML = `
-<td>${cols[0]}</td>
-<td>${cols[1]}</td>
-<td>${cols[2]}</td>
-<td>${cols[3]}</td>
-`;
+<br><br>
 
-tbody.appendChild(tr);
+<label>TxRx:</label><br>
+<input type="text" id="txrx">
 
-});
+<br><br>
 
-});
+<label>Modem:</label><br>
+<input type="text" id="modem">
 
-</script>
+<br><br>
 
-</body>
-</html>
+<label>Planned CF:</label><br>
+<input type="text" id="plannedcf">
+
+<br><br>
+
+<label>Carrier Rate:</label><br>
+<input type="text" id="rate">
+
+<br><br>
+
+<label>Remarks:</label><br>
+<textarea id="remarks" rows="4" cols="50"></textarea>
+
+<br><br>
+
+<button>Save</button>
+
+<hr>
