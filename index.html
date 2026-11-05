@@ -330,103 +330,9 @@ button:hover{
 </div>
 
 </div>
-function saveCarrier(){
-
-    let carriers =
-        JSON.parse(
-            localStorage.getItem("carriers")
-        ) || [];
-
-    carriers.push({
-
-        CarrierID: document.getElementById("carrierid").value,
-        Customer: document.getElementById("customer").value,
-        Satellite: document.getElementById("satellite").value,
-        Antenna: document.getElementById("antenna").value,
-        Room: document.getElementById("room").value,
-        AntennaPath: document.getElementById("antennapath").value,
-        OnlineModem: document.getElementById("onlinemodem").value,
-        BCFreq: document.getElementById("bcfreq").value,
-        LineAmplifier: document.getElementById("lineamp").value,
-        ServiceID: document.getElementById("serviceid").value,
-        ServiceName: document.getElementById("servicename").value,
-        Bandwidth: document.getElementById("bandwidth").value,
-        DataCare: document.getElementById("datacare").value,
-        ChangeNumber: document.getElementById("changenumber").value,
-        StartDate: document.getElementById("startdate").value,
-        EndDate: document.getElementById("enddate").value,
-        Transponder: document.getElementById("transponder").value,
-        TXFreq: document.getElementById("txfreq").value,
-        RXFreq: document.getElementById("rxfreq").value,
-        TxRx: document.getElementById("txrx").value,
-        Polarization: document.getElementById("pol").value,
-        PlannedCF: document.getElementById("plannedcf").value,
-        CarrierDataRate: document.getElementById("rate").value,
-        Status: document.getElementById("status").value,
-        Remarks: document.getElementById("remarks").value
-
-    });
-
-    localStorage.setItem(
-        "carriers",
-        JSON.stringify(carriers)
-    );
-
-    alert(
-        "Carrier saved successfully.\n\nTotal Records: "
-        + carriers.length
-    );
-
-}
-
-
-function exportCSV(){
-
-    let carriers =
-        JSON.parse(
-            localStorage.getItem("carriers")
-        ) || [];
-
-    if(carriers.length === 0){
-
-        alert("No carrier records saved.");
-
-        return;
-
-    }
-
-    let csv =
-        Object.keys(carriers[0]).join(",") + "\n";
-
-    carriers.forEach(row => {
-
-        csv +=
-            Object.values(row)
-            .map(v => `"${v ?? ""}"`)
-            .join(",") + "\n";
-
-    });
-
-    const blob =
-        new Blob(
-            [csv],
-            {type:'text/csv'}
-        );
-
-    const link =
-        document.createElement("a");
-
-    link.href =
-        URL.createObjectURL(blob);
-
-    link.download =
-        "CarrierDatabase.csv";
-
-    link.click();
-
-}
 <script>
 
+// Load dropdowns
 async function loadDropdown(csvFile, elementId){
 
     const response = await fetch(csvFile);
@@ -464,6 +370,9 @@ loadDropdown("satellites.csv","satellite");
 loadDropdown("status.csv","status");
 loadDropdown("antennas.csv","antenna");
 
+
+// Infrastructure lookup
+
 let infrastructureData = [];
 
 fetch("infrastructure.csv")
@@ -476,7 +385,8 @@ fetch("infrastructure.csv")
     infrastructureData =
         rows.slice(1).map(row => {
 
-            const cols = row.split(',');
+            const cols =
+                row.split(',');
 
             return {
 
@@ -493,6 +403,7 @@ fetch("infrastructure.csv")
         });
 
 });
+
 
 document
 .getElementById("antenna")
@@ -526,6 +437,119 @@ document
     }
 
 });
+
+
+// Save Carrier
+
+function saveCarrier(){
+
+    let carriers =
+        JSON.parse(
+            localStorage.getItem("carriers")
+        ) || [];
+
+    carriers.push({
+
+        CarrierID:
+            document.getElementById("carrierid").value,
+
+        Customer:
+            document.getElementById("customer").value,
+
+        Satellite:
+            document.getElementById("satellite").value,
+
+        Antenna:
+            document.getElementById("antenna").value,
+
+        AntennaPath:
+            document.getElementById("antennapath").value,
+
+        ServiceID:
+            document.getElementById("serviceid").value,
+
+        ServiceName:
+            document.getElementById("servicename").value,
+
+        PlannedCF:
+            document.getElementById("plannedcf").value,
+
+        CarrierDataRate:
+            document.getElementById("rate").value,
+
+        Status:
+            document.getElementById("status").value
+
+    });
+
+    localStorage.setItem(
+        "carriers",
+        JSON.stringify(carriers)
+    );
+
+    alert(
+        "Carrier saved successfully.\n\nTotal Records: "
+        + carriers.length
+    );
+
+}
+
+
+// Export CSV
+
+function exportCSV(){
+
+    let carriers =
+        JSON.parse(
+            localStorage.getItem("carriers")
+        ) || [];
+
+    if(carriers.length === 0){
+
+        alert(
+            "No carrier records saved."
+        );
+
+        return;
+    }
+
+    let csv =
+        Object.keys(carriers[0]).join(",")
+        + "\n";
+
+    carriers.forEach(row => {
+
+        csv +=
+            Object.values(row)
+            .join(",")
+            + "\n";
+
+    });
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:"text/csv"
+            }
+        );
+
+    const link =
+        document.createElement("a");
+
+    link.href =
+        URL.createObjectURL(blob);
+
+    link.download =
+        "CarrierDatabase.csv";
+
+    link.click();
+
+}
+
+
+// Count Saved Records
+
 function showSavedCount(){
 
     let carriers =
@@ -539,108 +563,8 @@ function showSavedCount(){
     );
 
 }
-function saveCarrier(){
 
-    let carriers =
-        JSON.parse(
-            localStorage.getItem("carriers")
-        ) || [];
-
-    carriers.push({
-
-        CarrierID: document.getElementById("carrierid").value,
-        Customer: document.getElementById("customer").value,
-        Satellite: document.getElementById("satellite").value,
-        Antenna: document.getElementById("antenna").value,
-        Room: document.getElementById("room").value,
-        AntennaPath: document.getElementById("antennapath").value,
-        OnlineModem: document.getElementById("onlinemodem").value,
-        BCFreq: document.getElementById("bcfreq").value,
-        LineAmplifier: document.getElementById("lineamp").value,
-        ServiceID: document.getElementById("serviceid").value,
-        ServiceName: document.getElementById("servicename").value,
-        Bandwidth: document.getElementById("bandwidth").value,
-        DataCare: document.getElementById("datacare").value,
-        ChangeNumber: document.getElementById("changenumber").value,
-        StartDate: document.getElementById("startdate").value,
-        EndDate: document.getElementById("enddate").value,
-        Transponder: document.getElementById("transponder").value,
-        TXFreq: document.getElementById("txfreq").value,
-        RXFreq: document.getElementById("rxfreq").value,
-        TxRx: document.getElementById("txrx").value,
-        Polarization: document.getElementById("pol").value,
-        PlannedCF: document.getElementById("plannedcf").value,
-        CarrierDataRate: document.getElementById("rate").value,
-        Status: document.getElementById("status").value,
-        Remarks: document.getElementById("remarks").value
-
-    });
-
-    localStorage.setItem(
-        "carriers",
-        JSON.stringify(carriers)
-    );
-
-    alert(
-        "Carrier saved successfully.\n\nTotal Records: " +
-        carriers.length
-    );
-}
-
-function exportCSV(){
-
-    let carriers =
-        JSON.parse(
-            localStorage.getItem("carriers")
-        ) || [];
-
-    if(carriers.length === 0){
-
-        alert("No carrier records saved.");
-        return;
-    }
-
-    let csv =
-        Object.keys(carriers[0]).join(",") + "\n";
-
-    carriers.forEach(row => {
-
-        csv +=
-            Object.values(row)
-            .map(v => `"${v ?? ""}"`)
-            .join(",") + "\n";
-
-    });
-
-    const blob =
-        new Blob([csv], {
-            type:"text/csv"
-        });
-
-    const link =
-        document.createElement("a");
-
-    link.href =
-        URL.createObjectURL(blob);
-
-    link.download =
-        "CarrierDatabase.csv";
-
-    link.click();
-}
-
-function showSavedCount(){
-
-    let carriers =
-        JSON.parse(
-            localStorage.getItem("carriers")
-        ) || [];
-
-    alert(
-        "Total saved records: " +
-        carriers.length
-    );
-}    
+</script>
 </script>
 
 </body>
