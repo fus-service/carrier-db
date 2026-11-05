@@ -50,7 +50,7 @@ body{
 
 .card{
     background:white;
-    max-width:1000px;
+    max-width:1100px;
     padding:25px;
     border-radius:12px;
     box-shadow:0 4px 15px rgba(0,0,0,0.15);
@@ -75,7 +75,7 @@ h2{
     color:white;
     padding:15px;
     border-radius:8px;
-    min-width:160px;
+    min-width:170px;
     text-align:center;
     font-weight:bold;
 }
@@ -106,6 +106,7 @@ button{
     border-radius:6px;
     cursor:pointer;
     margin-right:10px;
+    margin-bottom:10px;
 }
 
 button:hover{
@@ -123,13 +124,14 @@ button:hover{
 <body>
 
 <div class="hero">
-<div class="hero-text">
-<h1>📡 SES Carrier Database</h1>
-<p>RF Operations • Carrier Planning • SQM Replacement</p>
-</div>
+    <div class="hero-text">
+        <h1>📡 SES Carrier Database</h1>
+        <p>RF Operations • Carrier Planning • SQM Replacement</p>
+    </div>
 </div>
 
 <div class="container">
+
 <div class="card">
 
 <div class="stats">
@@ -196,7 +198,7 @@ Equipment Rooms
 
 <br><br>
 
-<label>BC Frequency</label><br>
+<label>BC Frequency (MHz)</label><br>
 <input type="text" id="bcfreq">
 
 <br><br>
@@ -229,6 +231,50 @@ Equipment Rooms
 
 <br><br>
 
+<label>Service ID</label><br>
+<input type="text" id="serviceid">
+
+<br><br>
+
+<label>Service Name</label><br>
+<input type="text" id="servicename">
+
+<br><br>
+
+<label>Transponder</label><br>
+<input type="text" id="transponder">
+
+<br><br>
+
+<label>TX Frequency (MHz)</label><br>
+<input type="text" id="txfreq">
+
+<br><br>
+
+<label>RX Frequency (MHz)</label><br>
+<input type="text" id="rxfreq">
+
+<br><br>
+
+<label>TxRx</label><br>
+<select id="txrx">
+<option>TX</option>
+<option>RX</option>
+<option>TX+RX</option>
+</select>
+
+<br><br>
+
+<label>Polarization</label><br>
+<select id="pol">
+<option>Left-Hand Circular</option>
+<option>Right-Hand Circular</option>
+<option>Horizontal</option>
+<option>Vertical</option>
+</select>
+
+<br><br>
+
 <label>Planned CF</label><br>
 <input type="text" id="plannedcf">
 
@@ -252,12 +298,21 @@ Equipment Rooms
 <br><br>
 
 <button>💾 Save Carrier</button>
-<button>📥 Export Excel</button>
+
+<button>📥 Full Export</button>
+
+<button>👥 Export Customer</button>
+
+<button>🛰 Export Satellite</button>
+
+<button>📡 Export Antenna</button>
+
 <button>🔍 Search</button>
 
 </div>
 
 </div>
+
 </div>
 
 <script>
@@ -272,6 +327,8 @@ async function loadDropdown(csvFile, elementId){
     const select =
         document.getElementById(elementId);
 
+    if(!select) return;
+
     select.innerHTML = '';
 
     rows.slice(1).forEach(row => {
@@ -285,11 +342,9 @@ async function loadDropdown(csvFile, elementId){
             option.textContent = row.trim();
 
             select.appendChild(option);
-
         }
 
     });
-
 }
 
 loadDropdown("customers.csv","customer");
