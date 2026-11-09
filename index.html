@@ -145,7 +145,7 @@ button:hover{
 
 <div class="stat-box">
 📡<br>
-Antenna Paths
+Antennas
 </div>
 
 <div class="stat-box">
@@ -159,8 +159,8 @@ Modems
 </div>
 
 <div class="stat-box">
-🏢<br>
-Equipment Rooms
+📍<br>
+Modem Locations
 </div>
 
 </div>
@@ -212,8 +212,9 @@ Equipment Rooms
 <label>BC Frequency (MHz)</label><br>
 
 <input
-type="text"
-id="bcfreq">
+type="number"
+id="bcfreq"
+readonly>
 
 <br><br>
 
@@ -221,7 +222,8 @@ id="bcfreq">
 
 <input
 type="text"
-id="lineamp">
+id="lineamp"
+readonly>
 
 </div>
 
@@ -230,10 +232,8 @@ id="lineamp">
 <h2>
 Carrier Information / SSOG Information
 </h2>
-<h2>
-Carrier Information / SSOG Information
-</h2>
 
+    
 <label>Carrier ID</label><br>
 
 <input
@@ -312,7 +312,7 @@ id="enddate">
 
 <label>Transponder</label><br>
 
-<select id="transponder">
+<select id="Transponder">
 
 <option>Loading...</option>
 
@@ -322,7 +322,7 @@ id="enddate">
 <label>TX Frequency (MHz)</label><br>
 
 <input
-type="text"
+type="number"
 id="txfreq">
 
 <br><br>
@@ -330,7 +330,7 @@ id="txfreq">
 <label>RX Frequency (MHz)</label><br>
 
 <input
-type="text"
+type="number"
 id="rxfreq">
 
 <br><br>
@@ -429,7 +429,6 @@ rows="5"></textarea>
 </div>
 
 <script>
-    <script>
 
 // =========================
 // Load Dropdowns
@@ -832,5 +831,4 @@ function showSavedCount(){
 </script>
 
 </body>
-
 </html>
