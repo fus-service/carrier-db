@@ -219,11 +219,12 @@ readonly>
 <br><br>
 
 <label>Line Amplifier</label><br>
-
-<input
-type="text"
-id="lineamp"
-readonly>
+ 
+<select id="lineamp">
+ 
+<option>Loading...</option>
+ 
+</select>
 
 </div>
 
@@ -521,6 +522,11 @@ loadDropdown(
 loadDropdown(
     "onlinemodems.csv",
     "onlinemodem"
+);
+    
+loadDropdown(
+    "lineamplifier.csv",
+    "lineamp"
 );
 
 
