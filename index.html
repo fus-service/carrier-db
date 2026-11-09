@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
 <title>SES Carrier Database</title>
 
 <style>
@@ -102,7 +103,7 @@ button{
     background:#0078d4;
     color:white;
     border:none;
-    padding:12px 20px;
+        padding:12px 20px;
     border-radius:6px;
     cursor:pointer;
     margin-right:10px;
@@ -123,10 +124,17 @@ button:hover{
 <body>
 
 <div class="hero">
+
     <div class="hero-text">
+
         <h1>📡 SES Carrier Database</h1>
-        <p>RF Operations • Carrier Planning • SQM Replacement</p>
+
+        <p>
+        RF Operations • Carrier Planning • SQM Replacement
+        </p>
+
     </div>
+
 </div>
 
 <div class="container">
@@ -136,19 +144,23 @@ button:hover{
 <div class="stats">
 
 <div class="stat-box">
-📡<br>Antenna Paths
+📡<br>
+Antenna Paths
 </div>
 
 <div class="stat-box">
-🛰<br>Satellites
+🛰<br>
+Satellites
 </div>
 
 <div class="stat-box">
-📶<br>Modems
+📶<br>
+Modems
 </div>
 
 <div class="stat-box">
-🏢<br>Equipment Rooms
+🏢<br>
+Equipment Rooms
 </div>
 
 </div>
@@ -158,187 +170,281 @@ button:hover{
 <h2>RF Infrastructure Details</h2>
 
 <label>Teleport</label><br>
+
 <select id="teleport">
-<option>FUS</option>
-</select>
 
-<br><br>
+    <option>FUS</option>
 
-<label>Building</label><br>
-<select id="building">
-<option>CB</option>
 </select>
 
 <br><br>
 
 <label>Antenna</label><br>
+
 <select id="antenna">
-<option>Loading...</option>
+
+    <option>Loading...</option>
+
 </select>
 
 <br><br>
 
-<label>Room</label><br>
-<input type="text" id="room">
+<label>Modem Location</label><br>
+
+<select id="modemlocation">
+
+    <option>Loading...</option>
+
+</select>
 
 <br><br>
 
-<label>Antenna Path</label><br>
-<input type="text" id="antennapath">
+<label>Online Modem Name</label><br>
 
-<br><br>
+<select id="onlinemodem">
 
-<label>Online Modem</label><br>
-<input type="text" id="onlinemodem">
+    <option>Loading...</option>
+
+</select>
 
 <br><br>
 
 <label>BC Frequency (MHz)</label><br>
-<input type="text" id="bcfreq">
+
+<input
+type="text"
+id="bcfreq">
 
 <br><br>
 
 <label>Line Amplifier</label><br>
-<input type="text" id="lineamp">
+
+<input
+type="text"
+id="lineamp">
 
 </div>
 
 <div class="section">
 
-<h2>Carrier Information</h2>
+<h2>
+Carrier Information / SSOG Information
+</h2>
+<h2>
+Carrier Information / SSOG Information
+</h2>
 
 <label>Carrier ID</label><br>
-<input type="text" id="carrierid">
+
+<input
+type="text"
+id="carrierid">
 
 <br><br>
 
 <label>Customer</label><br>
+
 <select id="customer">
+
 <option>Loading...</option>
+
 </select>
 
 <br><br>
 
 <label>Satellite</label><br>
+
 <select id="satellite">
+
 <option>Loading...</option>
+
 </select>
 
 <br><br>
 
 <label>Service ID</label><br>
-<input type="text" id="serviceid">
+
+<input
+type="text"
+id="serviceid">
 
 <br><br>
 
 <label>Service Name</label><br>
-<input type="text" id="servicename">
+
+<input
+type="text"
+id="servicename">
 
 <br><br>
 
-<label>Bandwidth</label><br>
-<input type="text" id="bandwidth">
+<label>Allocated BW (MHz)</label><br>
 
-<br><br>
-
-<label>DataCare</label><br>
-<input type="text" id="datacare">
+<input
+type="text"
+id="bandwidth">
 
 <br><br>
 
 <label>Change Number</label><br>
-<input type="text" id="changenumber">
+
+<input
+type="text"
+id="changenumber">
 
 <br><br>
 
 <label>Start Date</label><br>
-<input type="date" id="startdate">
+
+<input
+type="date"
+id="startdate">
 
 <br><br>
 
 <label>End Date</label><br>
-<input type="date" id="enddate">
+
+<input
+type="date"
+id="enddate">
 
 <br><br>
 
 <label>Transponder</label><br>
-<input type="text" id="transponder">
+
+<select id="transponder">
+
+<option>Loading...</option>
+
+</select>
 
 <br><br>
-
 <label>TX Frequency (MHz)</label><br>
-<input type="text" id="txfreq">
+
+<input
+type="text"
+id="txfreq">
 
 <br><br>
 
 <label>RX Frequency (MHz)</label><br>
-<input type="text" id="rxfreq">
+
+<input
+type="text"
+id="rxfreq">
 
 <br><br>
 
 <label>TxRx</label><br>
+
 <select id="txrx">
+
 <option>TX</option>
 <option>RX</option>
 <option>TX+RX</option>
+
 </select>
 
 <br><br>
 
 <label>Polarization</label><br>
+
 <select id="pol">
+
 <option>Left-Hand Circular</option>
 <option>Right-Hand Circular</option>
 <option>Horizontal</option>
 <option>Vertical</option>
+
 </select>
 
 <br><br>
 
 <label>Planned CF</label><br>
-<input type="text" id="plannedcf">
+
+<input
+type="text"
+id="plannedcf">
 
 <br><br>
 
 <label>Carrier Data Rate</label><br>
-<input type="text" id="rate">
+
+<input
+type="text"
+id="rate">
 
 <br><br>
 
 <label>Status</label><br>
+
 <select id="status">
+
 <option>Loading...</option>
+
 </select>
 
 <br><br>
 
 <label>Remarks</label><br>
-<textarea id="remarks" rows="5"></textarea>
+
+<textarea
+id="remarks"
+rows="5"></textarea>
 
 <br><br>
 
-<button onclick="saveCarrier()">💾 Save Carrier</button>
-<button onclick="exportCSV()">📥 Export Local CSV</button>
-<button>📥 Full Export</button>
-<button>👥 Export Customer</button>
-<button>🛰 Export Satellite</button>
-<button>📡 Export Antenna</button>
-<button onclick="showSavedCount()">📊 Saved Records</button>
-    
-</div>
+<button onclick="saveCarrier()">
+💾 Save Carrier
+</button>
+
+<button onclick="exportCSV()">
+📥 Export Local CSV
+</button>
+
+<button onclick="showSavedCount()">
+📊 Saved Records
+</button>
+
+<button>
+📥 Full Export
+</button>
+
+<button>
+👥 Export Customer
+</button>
+
+<button>
+🛰 Export Satellite
+</button>
+
+<button>
+📡 Export Antenna
+</button>
 
 </div>
 
 </div>
+
+</div>
+
 <script>
+    <script>
 
-// Load dropdowns
+// =========================
+// Load Dropdowns
+// =========================
+
 async function loadDropdown(csvFile, elementId){
 
-    const response = await fetch(csvFile);
-    const text = await response.text();
+    const response =
+        await fetch(csvFile);
 
-    const rows = text.trim().split('\n');
+    const text =
+        await response.text();
+
+    const rows =
+        text.trim().split('\n');
 
     const select =
         document.getElementById(elementId);
@@ -354,8 +460,11 @@ async function loadDropdown(csvFile, elementId){
             const option =
                 document.createElement('option');
 
-            option.value = row.trim();
-            option.textContent = row.trim();
+            option.value =
+                row.trim();
+
+            option.textContent =
+                row.trim();
 
             select.appendChild(option);
 
@@ -365,18 +474,62 @@ async function loadDropdown(csvFile, elementId){
 
 }
 
-loadDropdown("customers.csv","customer");
-loadDropdown("satellites.csv","satellite");
-loadDropdown("status.csv","status");
-loadDropdown("antennas.csv","antenna");
+
+// =========================
+// Standard Dropdowns
+// =========================
+
+loadDropdown(
+    "customers.csv",
+    "customer"
+);
+
+loadDropdown(
+    "satellites.csv",
+    "satellite"
+);
+
+loadDropdown(
+    "status.csv",
+    "status"
+);
+
+loadDropdown(
+    "antennas.csv",
+    "antenna"
+);
 
 
-// Infrastructure lookup
+// =========================
+// New Dropdowns
+// =========================
+
+loadDropdown(
+    "Transponder.csv",
+    "transponder"
+);
+
+loadDropdown(
+    "Rack-Modemlocations.csv",
+    "modemlocation"
+);
+
+loadDropdown(
+    "onlinemodems.csv",
+    "onlinemodem"
+);
+
+
+// =========================
+// Save Records
+// =========================
 
 let infrastructureData = [];
 
 fetch("infrastructure.csv")
+
 .then(response => response.text())
+
 .then(text => {
 
     const rows =
@@ -391,20 +544,30 @@ fetch("infrastructure.csv")
             return {
 
                 AntennaPath: cols[0],
-                OnlineModem: cols[1],
-                BCFreq: cols[2],
-                Teleport: cols[3],
-                Building: cols[4],
-                Room: cols[5],
-                Lineamp: cols[6]
+
+                OnlineModem:
+                    cols[1],
+
+                BCFreq:
+                    cols[2],
+
+                Teleport:
+                    cols[3],
+
+                Building:
+                    cols[4],
+
+                Room:
+                    cols[5],
+
+                Lineamp:
+                    cols[6]
 
             };
 
         });
 
 });
-
-
 document
 .getElementById("antenna")
 .addEventListener("change", function(){
@@ -414,71 +577,158 @@ document
 
     const match =
         infrastructureData.find(
-            x => x.AntennaPath.includes(antenna)
+            x =>
+            x.AntennaPath &&
+            x.AntennaPath.includes(antenna)
         );
 
     if(match){
 
-        document.getElementById("antennapath").value =
-            match.AntennaPath;
+        document.getElementById(
+            "bcfreq"
+        ).value =
+            match.BCFreq || "";
 
-        document.getElementById("onlinemodem").value =
-            match.OnlineModem;
-
-        document.getElementById("bcfreq").value =
-            match.BCFreq;
-
-        document.getElementById("room").value =
-            match.Room;
-
-        document.getElementById("lineamp").value =
-            match.Lineamp;
+        document.getElementById(
+            "lineamp"
+        ).value =
+            match.Lineamp || "";
 
     }
 
 });
 
 
+
+// =========================
 // Save Carrier
+// =========================
 
 function saveCarrier(){
 
     let carriers =
         JSON.parse(
-            localStorage.getItem("carriers")
+            localStorage.getItem(
+                "carriers"
+            )
         ) || [];
 
     carriers.push({
 
         CarrierID:
-            document.getElementById("carrierid").value,
+            document.getElementById(
+                "carrierid"
+            ).value,
 
         Customer:
-            document.getElementById("customer").value,
+            document.getElementById(
+                "customer"
+            ).value,
 
         Satellite:
-            document.getElementById("satellite").value,
+            document.getElementById(
+                "satellite"
+            ).value,
 
         Antenna:
-            document.getElementById("antenna").value,
+            document.getElementById(
+                "antenna"
+            ).value,
 
-        AntennaPath:
-            document.getElementById("antennapath").value,
+        ModemLocation:
+            document.getElementById(
+                "modemlocation"
+            ).value,
+
+        OnlineModemName:
+            document.getElementById(
+                "onlinemodem"
+            ).value,
+
+        BCFrequency:
+            document.getElementById(
+                "bcfreq"
+            ).value,
+
+        LineAmplifier:
+            document.getElementById(
+                "lineamp"
+            ).value,
 
         ServiceID:
-            document.getElementById("serviceid").value,
+            document.getElementById(
+                "serviceid"
+            ).value,
 
         ServiceName:
-            document.getElementById("servicename").value,
+            document.getElementById(
+                "servicename"
+            ).value,
+
+        AllocatedBW:
+            document.getElementById(
+                "bandwidth"
+            ).value,
+
+        ChangeNumber:
+            document.getElementById(
+                "changenumber"
+            ).value,
+
+        StartDate:
+            document.getElementById(
+                "startdate"
+            ).value,
+
+        EndDate:
+            document.getElementById(
+                "enddate"
+            ).value,
+
+        Transponder:
+            document.getElementById(
+                "transponder"
+            ).value,
+
+        TXFrequency:
+            document.getElementById(
+                "txfreq"
+            ).value,
+
+        RXFrequency:
+            document.getElementById(
+                "rxfreq"
+            ).value,
+
+        TxRx:
+            document.getElementById(
+                "txrx"
+            ).value,
+
+        Polarization:
+            document.getElementById(
+                "pol"
+            ).value,
 
         PlannedCF:
-            document.getElementById("plannedcf").value,
+            document.getElementById(
+                "plannedcf"
+            ).value,
 
         CarrierDataRate:
-            document.getElementById("rate").value,
+            document.getElementById(
+                "rate"
+            ).value,
 
         Status:
-            document.getElementById("status").value
+            document.getElementById(
+                "status"
+            ).value,
+
+        Remarks:
+            document.getElementById(
+                "remarks"
+            ).value
 
     });
 
@@ -495,13 +745,18 @@ function saveCarrier(){
 }
 
 
+
+// =========================
 // Export CSV
+// =========================
 
 function exportCSV(){
 
     let carriers =
         JSON.parse(
-            localStorage.getItem("carriers")
+            localStorage.getItem(
+                "carriers"
+            )
         ) || [];
 
     if(carriers.length === 0){
@@ -514,13 +769,18 @@ function exportCSV(){
     }
 
     let csv =
-        Object.keys(carriers[0]).join(",")
+        Object.keys(
+            carriers[0]
+        ).join(",")
         + "\n";
 
     carriers.forEach(row => {
 
         csv +=
             Object.values(row)
+            .map(value =>
+                `"${value ?? ""}"`
+            )
             .join(",")
             + "\n";
 
@@ -548,13 +808,18 @@ function exportCSV(){
 }
 
 
+
+// =========================
 // Count Saved Records
+// =========================
 
 function showSavedCount(){
 
     let carriers =
         JSON.parse(
-            localStorage.getItem("carriers")
+            localStorage.getItem(
+                "carriers"
+            )
         ) || [];
 
     alert(
@@ -565,7 +830,7 @@ function showSavedCount(){
 }
 
 </script>
-</script>
 
 </body>
+
 </html>
