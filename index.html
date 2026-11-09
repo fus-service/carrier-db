@@ -310,13 +310,17 @@ id="enddate">
 
 <br><br>
 
-<label></label><br>
+<label>Transponder</label><br>
 
 <select id="transponder">
 
 <option>Loading...</option>
 
 </select>
+
+<br><br>
+
+<label>TX Frequency (MHz)</label><br>
 
 <br><br>
 <label>TX Frequency (MHz)</label><br>
@@ -451,7 +455,7 @@ async function loadDropdown(csvFile, elementId){
     if(!select) return;
 
     select.innerHTML =
-'<option value="">Select Transponder</option>';
+'<option value="">Select...</option>';
 
     rows.slice(1).forEach(row => {
 
