@@ -211,10 +211,11 @@ Modem Locations
 
 <label>BC Frequency (MHz)</label><br>
 
-<input
-type="number"
-id="bcfreq"
-readonly>
+<select id="bcfreq">
+
+<option>Loading...</option>
+
+</select>
 
 <br><br>
 
@@ -528,7 +529,11 @@ loadDropdown(
     "lineamplifier.csv",
     "lineamp"
 );
-
+    
+loadDropdown(
+    "bcfrequency.csv",
+    "bcfreq"
+);
 
 // =========================
 // Save Records
@@ -593,11 +598,6 @@ document
         );
 
     if(match){
-
-        document.getElementById(
-            "bcfreq"
-        ).value =
-            match.BCFreq || "";
 
         document.getElementById(
             "lineamp"
