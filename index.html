@@ -450,7 +450,8 @@ async function loadDropdown(csvFile, elementId){
 
     if(!select) return;
 
-    select.innerHTML = '';
+    select.innerHTML =
+'<option value="">Select Transponder</option>';
 
     rows.slice(1).forEach(row => {
 
