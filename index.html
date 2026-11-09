@@ -310,9 +310,9 @@ id="enddate">
 
 <br><br>
 
-<label>Transponder</label><br>
+<label></label><br>
 
-<select id="Transponder">
+<select id="transponder">
 
 <option>Loading...</option>
 
@@ -504,7 +504,7 @@ loadDropdown(
 // =========================
 
 loadDropdown(
-    "Transponder.csv",
+    "transponder.csv",
     "transponder"
 );
 
@@ -684,7 +684,7 @@ function saveCarrier(){
                 "enddate"
             ).value,
 
-        Transponder:
+        transponder:
             document.getElementById(
                 "transponder"
             ).value,
